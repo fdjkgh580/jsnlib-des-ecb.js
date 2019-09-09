@@ -8,7 +8,7 @@ npm i jsnlib-des-ecb.js
 
 
 ````javascript
-import JsnlibDesEcb from "./JsnlibDesEcb";
+import JsnlibDesEcb from 'jsnlib-des-ecb.js';
 
 // Encrypt
 let cipherText = JsnlibDesEcb.encrypt({
