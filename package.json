@@ -1,6 +1,6 @@
 {
   "name": "jsnlib-des-ecb.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "DES-ECB 加解密",
   "main": "dist/index.js",
   "scripts": {
