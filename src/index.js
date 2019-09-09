@@ -1,4 +1,5 @@
 import JsnlibDesEcb from "./JsnlibDesEcb";
+export default JsnlibDesEcb;
 
 /*
 let cipherText = JsnlibDesEcb.encrypt({

@@ -1,8 +1,8 @@
 {
   "name": "jsnlib-des-ecb.js",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "DES-ECB 加解密",
-  "main": "JsnlibDesEcb.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
