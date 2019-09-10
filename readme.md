@@ -6,9 +6,16 @@
 npm i jsnlib-des-ecb.js
 ````
 
-
+## 引用模組
 ````javascript
 import JsnlibDesEcb from 'jsnlib-des-ecb.js';
+````
+
+## 使用方式
+````javascript
+// 設定加密鑰匙
+let key = 'custom-key';
+JsnlibDesEcb.setKey(key);
 
 // Encrypt
 let cipherText = JsnlibDesEcb.encrypt({
@@ -18,5 +25,6 @@ let cipherText = JsnlibDesEcb.encrypt({
 
 // Decrypt
 let obj = JsnlibDesEcb.decrypt(cipherText);
+
 console.log(obj);
 ````

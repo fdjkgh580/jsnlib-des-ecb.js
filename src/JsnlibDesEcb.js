@@ -8,6 +8,16 @@ import DesEcbCore from "./DesEcbCore";
 export default class JsnlibDesEcb {
 
     /**
+     * 設定鑰匙
+     * @param key 使用者自定義
+     * @returns {JsnlibDesEcb} 可以提供串接
+     */
+    static setKey(key) {
+        DesEcbCore.setKey(key);
+        return JsnlibDesEcb;
+    }
+
+    /**
      * 將物件透過 JSON 轉換為字串進行加密
      *
      * @param obj
