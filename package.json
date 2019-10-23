@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
   },
-  "keywords": [],
+  "keywords": ["DES-ECB", "encrypt", "decrypt"],
   "author": "",
   "license": "ISC",
   "devDependencies": {

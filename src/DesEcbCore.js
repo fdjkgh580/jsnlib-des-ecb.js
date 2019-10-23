@@ -1,17 +1,15 @@
 let CryptoJS = require('crypto-js');
 
-// 紀錄使用者的 key
-let desEcbKey = null;
 
 export default class DesEcbCore {
 
     /**
-     * 設定鑰匙
      * @param key {string} 加解密都需要透過這把鑰匙
      */
-    static setKey(key){
-        desEcbKey = key;
+    constructor(key){
+        this.key = key;
     }
+
 
     /**
      * 取得被 Hex 過後的鑰匙物件
@@ -19,9 +17,9 @@ export default class DesEcbCore {
      * 當使用加解密方法的時候，需要帶入的不是原始鑰匙字串，而是此物件
      * @returns {WordArray}
      */
-    static getKeyHex(){
-        if (desEcbKey === null) throw 'Des-Ecb Not Exists.';
-        return CryptoJS.enc.Utf8.parse(desEcbKey);
+    getKeyHex(){
+        if (this.key === null || this.key === undefined) throw 'Des-Ecb Not Exists.';
+        return CryptoJS.enc.Utf8.parse(this.key);
     }
 
     /**
@@ -29,7 +27,7 @@ export default class DesEcbCore {
      * @param message {string} 任何欲加密的字串
      * @returns {string} 經過加密後的字串
      */
-    static encrypt(message){
+    encrypt(message){
         let keyHex = this.getKeyHex();
 
         let encrypted = CryptoJS.DES.encrypt(message, keyHex, {
@@ -45,7 +43,7 @@ export default class DesEcbCore {
      * @param cipherText 填入已被加密過的字串
      * @returns {string} 解密後的字串
      */
-    static decrypt(cipherText) {
+    decrypt(cipherText) {
         let keyHex = this.getKeyHex();
 
         let decrypted = CryptoJS.DES.decrypt({
