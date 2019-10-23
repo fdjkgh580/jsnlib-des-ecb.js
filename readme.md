@@ -12,6 +12,37 @@ import JsnlibDesEcb from 'jsnlib-des-ecb.js';
 ````
 
 ## 使用方式
+
+### 實例化
+````javascript
+// 設定加密鑰匙
+let first = new JsnlibDesEcb({
+    key: 'custom-first'
+});
+
+let second = new JsnlibDesEcb({
+    key: 'custom-second'
+});
+
+// Encrypt
+let encryptFirst = first.encrypt({
+    id: 8,
+    title: '中文'
+});
+
+let encryptSecond = first.encrypt({
+    id: 9,
+    title: 'English'
+});
+
+// Decrypt
+let decryptFirst = first.decrypt(encryptFirst);
+let decryptSecond = first.decrypt(encryptSecond);
+
+console.log(decryptFirst, decryptSecond);
+````
+
+### 靜態方法
 ````javascript
 // 設定加密鑰匙
 let key = 'custom-key';
