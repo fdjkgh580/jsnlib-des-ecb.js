@@ -1,6 +1,5 @@
 import DesEcbCore from "./DesEcbCore";
 
-
 /**
  * 將物件簡單的使用 DES-ECB 加解密
  *
@@ -8,7 +7,7 @@ import DesEcbCore from "./DesEcbCore";
  */
 export default class JsnlibDesEcb {
 
-    constructor(params){
+    constructor(params) {
 
         this.options = {
             key: params.key
@@ -17,7 +16,7 @@ export default class JsnlibDesEcb {
         this.core = new DesEcbCore(this.options.key);
     }
 
-    getOptions(){
+    getOptions() {
         return this.options;
     }
 
@@ -47,7 +46,7 @@ export default class JsnlibDesEcb {
      * @param obj
      * @returns {*|CipherParams|string|PromiseLike<ArrayBuffer>}
      */
-    encrypt(obj){
+    encrypt(obj) {
         let str = JSON.stringify(obj);
         return this.core.encrypt(str);
     }
@@ -68,7 +67,7 @@ export default class JsnlibDesEcb {
      * @param cipherText
      * @returns string
      */
-    decrypt(cipherText){
+    decrypt(cipherText) {
         let str = this.core.decrypt(cipherText);
         return JSON.parse(str);
     }
